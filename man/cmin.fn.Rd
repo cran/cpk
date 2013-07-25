@@ -1,7 +1,7 @@
 \name{cmin.fn}
 \alias{cmin.fn}
 \title{
-Calculates \bold{cmin}
+\bold{cmin} function
 }
 
 \description{

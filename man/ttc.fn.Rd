@@ -1,10 +1,10 @@
 \name{ttc.fn}
 \alias{ttc.fn}
 \title{
-target therapeutic concentration function.
+\bold{ttc} function
 }
 \description{
-Calculates a drug's target therapeutic concentration (ttc) based on it's msc/Cmax and mec/Cmin.
+Calculates a drug's target therapeutic concentration (ttc) based on its msc or cmax and mec or cmin.
 }
 \usage{
 ttc.fn(msc, mec)

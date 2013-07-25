@@ -10,7 +10,7 @@ Performs a back-calculation to get the target therapeutic concentration (TTC) ba
 }
 
 \usage{
-bc.ttc.fn(dr, f, cl, wtkg = 86)
+bc.ttc.fn(dr, f, cl, wtkg)
 }
 \arguments{
   \item{dr}{

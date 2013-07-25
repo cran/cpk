@@ -1,7 +1,7 @@
 \name{dm.fn}
 \alias{dm.fn}
 \title{
-Maintenance dose function.
+\bold{dm} function
 }
 \description{
 Calculates drug's maintenance dose.

@@ -1,13 +1,13 @@
 \name{cmax.fn}
 \alias{cmax.fn}
 \title{
-Calculates \bold{cmax}
+\bold{cmax} function
 }
 \description{
 Calculates cmax (peak) drug concentration in ug/L, which is the same as ng/ml.
 }
 \usage{
-cmax.fn(f, dpo, vd, ar, wtkg = 86)
+cmax.fn(f, dpo, vd, ar, wtkg)
 }
 \arguments{
   \item{f}{
@@ -40,7 +40,7 @@ Maintainer: Oscar A. Linares MD <OALinaresMD@gmail.com>
 }
 
 \examples{
-f = 0.74; dpo <- 3440; vd = 2.8; ar = 2.4;
-cmax <- cmax.fn(f, dpo, vd, ar)
+f = 0.74; dpo <- 3440; vd = 2.8; ar = 2.4; wtkg=86;
+cmax <- cmax.fn(f, dpo, vd, ar, wtkg)
 }
 

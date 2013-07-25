@@ -7,14 +7,14 @@ Clinical Pharmacokinetics.
 }
 
 \description{
-This package was written to teach concepts and techniques for individualizing drug therapy to clinicians and pharmacists. While the package may be used by clinicians for actual dosage regimen analysis, design, and modification, caution should be exercised when applying the techniques described in \R package cpk.
+This package was written to teach concepts and techniques to clinicians and pharmacists for individualizing drug therapy. While the package may be used by clinicians for actual dosage regimen analysis, design, and modification, caution should be exercised when applying the techniques described in \R package cpk.
 }
 \details{
 \tabular{ll}{
 Package: \tab cpk\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2013-07-19\cr
+Version: \tab 1.3\cr
+Date: \tab 2013-07-25\cr
 License: \tab GPL-2\cr
 }
 }
@@ -53,34 +53,58 @@ Linares OA, Daly D, Stefanovski D, Boston RC. A new model for using quantitative
 \keyword{ cpk package }
 
 \examples{
-ke <- 0.2350; di <- 4;
-ar <- ar.fn(ke, di)
 
-ttc <- 20; dr <- 2.26; cl <- 0.57; f <- 0.74; wtkg <- 86;
-dr  <- dr.fn(ttc,cl,wtkg,f)
+wtkg = 181;       # kg
 
-f = 0.74; dpo <- 3440; vd = 2.8; ar = 2.4;
-cmax <- cmax.fn(f, dpo, vd, ar)
+# Drug Disposition Parameters
+thalf = 4;        # h
+ke    = 0.3180;   # h^-1
+vd    = 4.5;      # L/kg
+cl    = 1.43;     # L/h/kg
+f     = 1.00;     # dpo range: 15-64% (avg 38%), IV f = 1.
 
-f <- 0.74; dpo <- 3440; di <- 4; cl <- 0.37;
-css <-css.fn(f, dpo, di, cl)
+#### Set TTC
+ttc = 25;
 
-cmax <- 25.37; ke <- 0.1333; di <- 4;
-cmin <- cmin.fn(cmax, ke, di)
+#### Calculate dose rate (mg/h)
+dr  <- dr.fn (ttc, cl, wtkg, f)
 
-msc <- 50; mec <- 20; ke <- 0.2078;
-di  <- di.fn(msc, mec, ke)
+#### Set dosing interval based on thalf
+di = 4;   # h
 
-dr <- 1.42; di <- 4; 
-dm <- dm.fn(dr, di)
+#### Calculate dose (if f = 1, dose IV)
+dpo <- dpo.fn (dr, di)
+dpo/1000 # convert to mg
 
-dr <- 0.86; di <- 4;
-dpo <- dpo.fn(dr, di)
+#### Calculate loading dose based on cmax
+cmax <- 18.93; vd <- 35;
+dlcmax <- dlcmax.fn(cmax, vd)
 
-ttc <- 32.74; cl <- 0.59; wtkg <- 86; f <- 0.74; 
-dr <- dr.fn(ttc, cl, wtkg, f)
+#### Calculate loading dose based on ar
+dm <- 276; ar <- 2.4;
+dlar <- dlar.fn(dm, ar)
 
-msc = 50; mec = 20;
-ttc <- ttc.fn(msc, mec)
+#------------------------------------
+# ANALYSIS
+#------------------------------------
+bc.ttc <- bc.ttc.fn (dr, f, cl, wtkg)
+
+#### predict avg steady-state concentration
+# accumulation ratio
+ar  <- ar.fn (ke, di)
+
+css <- css.fn (f, dpo, di, cl, wtkg)
+css * ar # ug/L
+
+# predict fluctuation about steady-state (ug/L)
+cmax <- cmax.fn (f, dpo, vd, ar, wtkg)
+cmin <- cmin.fn (cmax, ke, di)
+
+ct <- ct.fn(cmax, ke, time=0)
+ct <- ct.fn(cmax, ke, time=4)
+
+# infusion rate
+css <- 14.43; cl <- 3.2; 
+R0  <- R0.fn(css, cl)
 
 }

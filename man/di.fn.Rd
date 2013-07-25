@@ -1,7 +1,7 @@
 \name{di.fn}
 \alias{di.fn}
 \title{
-Dosing interval function
+\bold{di} function
 }
 \description{
 Calculates a drug's dosing interval.

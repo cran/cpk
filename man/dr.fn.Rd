@@ -1,10 +1,10 @@
 \name{dr.fn}
 \alias{dr.fn}
 \title{
-Dose rate function
+\bold{dr} function
 }
 \description{
-Calculates dose rate.
+Calculates dose rate (mg/h).
 }
 \usage{
 dr.fn(ttc, cl, wtkg, f)

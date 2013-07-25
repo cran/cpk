@@ -1,13 +1,13 @@
 \name{css.fn}
 \alias{css.fn}
 \title{
-Calculates \bold{css}
+\bold{css} function
 }
 \description{
 Calculates css (steady-state) drug concentration in ug/L, which is the same as ng/ml.
 }
 \usage{
-css.fn(f, dpo, di, cl, wtkg = 86)
+css.fn(f, dpo, di, cl, wtkg)
 }
 \arguments{
   \item{f}{
@@ -40,7 +40,7 @@ Maintainer: Oscar A. Linares MD <OALinaresMD@gmail.com>
 }
 
 \examples{
-f <- 0.74; dpo <- 3440; di <- 4; cl <- 0.37;
-css <-css.fn(f, dpo, di, cl)
+f <- 0.74; dpo <- 3440; di <- 4; cl <- 0.37; wtkg <- 86;
+css <-css.fn(f, dpo, di, cl, wtkg)
 }
 

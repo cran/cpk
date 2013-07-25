@@ -1,10 +1,10 @@
 \name{dpo.fn}
 \alias{dpo.fn}
 \title{
-Oral dose of drug.
+\bold{dpo} function
 }
 \description{
-Calculates the oral dose of drug administered.
+Calculates the oral dose of drug to give.
 }
 \usage{
 dpo.fn(dr, di)
