@@ -4,7 +4,7 @@
 \bold{ct} function
 }
 \description{
-Predicts drug concentration at specified time (default time=0 h) [ug/L].
+Predicts drug concentration at specified time (default time=0 h) [ng/mL].
 }
 \usage{
 ct.fn(cmax, ke, time=0)

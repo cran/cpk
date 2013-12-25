@@ -93,8 +93,8 @@ bc.ttc <- bc.ttc.fn (dr, f, cl, wtkg)
 # accumulation ratio
 ar  <- ar.fn (ke, di)
 
-css <- css.fn (f, dpo, di, cl, wtkg)
-css * ar # ug/L
+css <- css.fn (f, dpo, di, cl, ar, wtkg)
+css # mg/L
 
 # predict fluctuation about steady-state (ug/L)
 cmax <- cmax.fn (f, dpo, vd, ar, wtkg)

@@ -4,10 +4,10 @@
 \bold{css} function
 }
 \description{
-Calculates css (steady-state) drug concentration in ug/L, which is the same as ng/ml.
+Calculates css (steady-state) drug concentration in ng/mL, which is the same as ug/mL.
 }
 \usage{
-css.fn(f, dpo, di, cl, wtkg)
+css.fn(f, dpo, di, cl, ar, wtkg)
 }
 \arguments{
   \item{f}{
@@ -22,13 +22,16 @@ is the dosing interval in h.
   \item{cl}{
 is the total clearance rate in L/kg/h.
 }
+  \item{ar}{
+is stepwise accumulation ratio.
+}
   \item{wtkg}{
 is patient weight in kg.
 }
 }
 
 \value{
-Returns css in ug/L
+Returns css in mg/L and ug/L
 }
 
 \references{
@@ -40,7 +43,7 @@ Maintainer: Oscar A. Linares MD <OALinaresMD@gmail.com>
 }
 
 \examples{
-f <- 0.74; dpo <- 3440; di <- 4; cl <- 0.37; wtkg <- 86;
-css <-css.fn(f, dpo, di, cl, wtkg)
+f <- 0.74; dpo <- 3440; di <- 4; cl <- 0.37; ar <-1.4; wtkg <- 86;
+css <-css.fn(f, dpo, di, cl, ar, wtkg)
 }
 

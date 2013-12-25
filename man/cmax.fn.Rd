@@ -4,7 +4,7 @@
 \bold{cmax} function
 }
 \description{
-Calculates cmax (peak) drug concentration in ug/L, which is the same as ng/ml.
+Calculates cmax (peak) drug concentration in ng/mL, which is the same as ug/mL.
 }
 \usage{
 cmax.fn(f, dpo, vd, ar, wtkg)

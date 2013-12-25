@@ -4,7 +4,7 @@
 \bold{ttc} function
 }
 \description{
-Calculates a drug's target therapeutic concentration (ttc) based on its msc or cmax and mec or cmin.
+Calculates a drug's target therapeutic concentration (ttc) based on its msc or cmax and mec or cmin in ng/mL, which is the same as ug/mL.
 }
 \usage{
 ttc.fn(msc, mec)

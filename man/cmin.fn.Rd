@@ -5,7 +5,7 @@
 }
 
 \description{
-Calculates cmin (trough) drug concentration in ug/L, which is the same as ng/ml.
+Calculates cmin (trough) drug concentration in ng/mL, which is the same as ug/mL.
 }
 \usage{
 cmin.fn(cmax, ke, di)
